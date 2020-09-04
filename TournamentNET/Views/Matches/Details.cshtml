@@ -1,0 +1,66 @@
+﻿@model TournamentNET.Models.Matches
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Matches</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Teams.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teams.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teams1.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teams1.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tournaments.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tournaments.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.game_result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.game_result)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.game_points)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.game_points)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ladder_position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ladder_position)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.match_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

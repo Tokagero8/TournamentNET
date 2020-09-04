@@ -1,0 +1,72 @@
+﻿@model TournamentNET.Models.Matches
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Matches</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Teams.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teams.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teams1.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teams1.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tournaments.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tournaments.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.game_result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.game_result)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.game_points)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.game_points)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ladder_position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ladder_position)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
