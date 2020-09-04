@@ -145,6 +145,7 @@
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Teams.cs" />
     <Compile Include="Models\Tournaments.cs" />
+    <Compile Include="Models\TourTeams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

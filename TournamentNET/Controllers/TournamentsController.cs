@@ -27,12 +27,17 @@ namespace TournamentNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tournaments tournaments = db.Tournaments.Find(id);
-            if (tournaments == null)
+            Tournaments tournaments = db.Tournaments.Find(id); //Znajdowanie turniej z podanego id
+            List<Teams> teams = new List<Teams>(); //tworzenie pustej list teamów
+            teams = tournaments.Teams.ToList().FindAll(t => t.tournament_id == id); //dodawanie do tej listy teamów, które są w turnieju
+            TourTeams tourTeams = new TourTeams(); //tworzenie objektu, który ma w sobie i turniej i teamy
+            tourTeams.tournaments = tournaments; //dodanie turnieju
+            tourTeams.teams = teams; //dodanie teamów.
+            if (tourTeams == null)
             {
                 return HttpNotFound();
             }
-            return View(tournaments);
+            return View(tourTeams);
         }
 
         // GET: Tournaments/Create
