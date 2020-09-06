@@ -29,10 +29,13 @@ namespace TournamentNET.Controllers
             }
             Tournaments tournaments = db.Tournaments.Find(id); //Znajdowanie turniej z podanego id
             List<Teams> teams = new List<Teams>(); //tworzenie pustej list teamów
-            teams = tournaments.Teams.ToList().FindAll(t => t.tournament_id == id); //dodawanie do tej listy teamów, które są w turnieju
+            teams = tournaments.Teams.ToList().FindAll(t => t.tournament_id == id).OrderBy(s => s.ranking).ToList(); //dodawanie do tej listy teamów, które są w turnieju i sortuje według rankingu
+            List<Matches> matches = new List<Matches>(); // dodanie pustej listy meczów
+            matches = tournaments.Matches.ToList(); ;
             TourTeams tourTeams = new TourTeams(); //tworzenie objektu, który ma w sobie i turniej i teamy
             tourTeams.tournaments = tournaments; //dodanie turnieju
             tourTeams.teams = teams; //dodanie teamów.
+            tourTeams.matches = matches; // dodanie meczy
             if (tourTeams == null)
             {
                 return HttpNotFound();

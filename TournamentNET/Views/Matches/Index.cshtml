@@ -12,19 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Teams.name)
+            @Html.DisplayName("Nazwa Turnieju")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Teams1.name)
+            @Html.DisplayName("Team1")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tournaments.name)
+            @Html.DisplayName("Game results")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.game_result)
+            @Html.DisplayName("Team2")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.game_points)
+            @Html.DisplayName("Game points")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ladder_position)
@@ -33,31 +33,33 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Teams.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Teams1.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tournaments.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.game_result)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.game_points)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ladder_position)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.match_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.match_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.match_id })
-        </td>
-    </tr>
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Tournaments.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Teams.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.game_result)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Teams1.name)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.game_points)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ladder_position)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.match_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.match_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.match_id })
+    </td>
+</tr>
 }
 
 </table>

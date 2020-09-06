@@ -9,5 +9,6 @@ namespace TournamentNET.Models
     {
         public Tournaments tournaments { get; set; }
         public List<Teams> teams { get; set; }
+        public List<Matches> matches { get; set;}
     }
 }
