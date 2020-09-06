@@ -7,27 +7,29 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Statistics</h4>
+    <h4>Player Statistics in Match</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Matches.game_result)
+            @Html.DisplayName("Match") 
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Matches.game_result)
+            @Html.DisplayFor(model => model.Matches.Teams.name) vs
+            @Html.DisplayFor(model => model.Matches.Teams1.name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Players.name)
+            @Html.DisplayName("Full Name")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Players.name)
+            @Html.DisplayFor(model => model.Players.name) 
+            @Html.DisplayFor(model => model.Players.last_name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.points)
+            @Html.DisplayName("Points")
         </dt>
 
         <dd>
@@ -35,7 +37,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.error)
+            @Html.DisplayName("Error")
         </dt>
 
         <dd>
@@ -43,7 +45,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.blocks)
+            @Html.DisplayName("Block")
         </dt>
 
         <dd>
@@ -51,7 +53,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.aces)
+            @Html.DisplayName("Aces")
         </dt>
 
         <dd>

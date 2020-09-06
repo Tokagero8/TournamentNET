@@ -4,17 +4,73 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Matchs information</h2>
 
 <div>
-    <h4>Matches</h4>
-  
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Tournaments")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matches.Tournaments.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Team1")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matches.Teams.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Results")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matches.game_result)
+        </dd>
 
 
-    <div><b>Player Statistic</b><br /></div>
+        <dt>
+            @Html.DisplayName("Team2")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matches.Teams1.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Set Point")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matches.game_points)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Ladder Position")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.matches.ladder_position)
+        </dd>
+
+
+    </dl>
+</div>
+
+
+
+<div>
+
+<b><h4>Statistic Players with Match</h4></b><br />
     <table class="table table-bordered table-responsive table-hover">
         <tr>
-            <th>Imie Nazwisko</th>
+            <th>Full Name</th>
             <th>Team</th>
             <th>Points</th>
             <th>Error</th>
@@ -24,15 +80,15 @@
         </tr>
         @foreach (var d in Model.statistics)
         {
-        <tr>
-            <td>@d.Players.name  @d.Players.last_name</td>
-            <td>@d.Players.Teams.name</td>
-            <td>@d.points</td>
-            <td>@d.error</td>
-            <td>@d.blocks</td>
-            <td>@d.aces</td>
+            <tr>
+                <td>@d.Players.name  @d.Players.last_name</td>
+                <td>@d.Players.Teams.name</td>
+                <td>@d.points</td>
+                <td>@d.error</td>
+                <td>@d.blocks</td>
+                <td>@d.aces</td>
 
-    </tr>
+            </tr>
 
         }
     </table>
@@ -40,6 +96,6 @@
 
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.matches.match_id}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.matches.match_id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

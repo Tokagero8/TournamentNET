@@ -32,7 +32,8 @@
                     }
                     catch (Exception ex)
                     {
-                        <a href="@Url.Action("Create", "Matches", new { @ladder_position= 12})" class="elements"> 
+                        @* Tutaj prówbowałem przekaazać  parametr ladder_position po kliknieciu w link, ale nie działa  *@
+                        <a href="@Url.Action("Create", "Matches", new { @ladder_position = 12})" class="elements">
                             <span>Create Match</span>
                         </a>
 
