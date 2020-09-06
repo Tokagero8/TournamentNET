@@ -28,12 +28,19 @@ namespace TournamentNET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Matches matches = db.Matches.Find(id);
-            if (matches == null)
+
+            Matches matches = db.Matches.Find(id); //Znajdowanie meczu z podanego id
+            List<Statistics> statistics = new List<Statistics>(); //tworzenie pustej list ztatystyk zawodników
+            statistics = matches.Statistics.ToList().FindAll(t => t.match_id == id).OrderBy(s => s.points).ToList(); //dodawanie do tej listy statystyk, które są w 
+            ViewModelMatches vmMatches = new ViewModelMatches(); //tworzenie objektu, który ma w sobie Mecze i statystyki
+            vmMatches.matches = matches; //dodanie meczy
+            vmMatches.statistics = statistics; //dodanie statystyk
+
+            if (vmMatches == null)
             {
                 return HttpNotFound();
             }
-            return View(matches);
+            return View(vmMatches);
         }
 
         // GET: Matches/Create

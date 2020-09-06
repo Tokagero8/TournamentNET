@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Match Statistics</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,52 +12,62 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Matches.game_result)
+            @Html.DisplayName("Match")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Players.name)
+            @Html.DisplayName("Player Name")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.points)
+            @Html.DisplayName("Team")
+        </th>
+
+        <th>
+            @Html.DisplayName("Points")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.error)
+            @Html.DisplayName("Error")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.blocks)
+            @Html.DisplayName("Block")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.aces)
+            @Html.DisplayName("Aces")
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Matches.game_result)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Players.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.points)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.error)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.blocks)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.aces)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.statistics_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.statistics_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.statistics_id })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Matches.Teams.name) vs
+        @Html.DisplayFor(modelItem => item.Matches.Teams1.name)
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Players.name)
+        @Html.DisplayFor(modelItem => item.Players.last_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Players.Teams.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.points)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.error)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.blocks)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.aces)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.statistics_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.statistics_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.statistics_id })
+    </td>
+</tr>
 }
 
 </table>

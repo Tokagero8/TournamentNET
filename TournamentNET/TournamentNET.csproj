@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44385</IISExpressSSLPort>
+    <IISExpressSSLPort>44337</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -146,6 +146,7 @@
     <Compile Include="Models\Teams.cs" />
     <Compile Include="Models\Tournaments.cs" />
     <Compile Include="Models\TourTeams.cs" />
+    <Compile Include="Models\ViewModelMatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

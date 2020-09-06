@@ -1,4 +1,4 @@
-﻿@model TournamentNET.Models.Matches
+﻿@model TournamentNET.Models.ViewModelMatches
 
 @{
     ViewBag.Title = "Details";
@@ -8,59 +8,38 @@
 
 <div>
     <h4>Matches</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Teams.name)
-        </dt>
+  
 
-        <dd>
-            @Html.DisplayFor(model => model.Teams.name)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Teams1.name)
-        </dt>
+    <div><b>Player Statistic</b><br /></div>
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th>Imie Nazwisko</th>
+            <th>Team</th>
+            <th>Points</th>
+            <th>Error</th>
+            <th>Block</th>
+            <th>Aces</th>
 
-        <dd>
-            @Html.DisplayFor(model => model.Teams1.name)
-        </dd>
+        </tr>
+        @foreach (var d in Model.statistics)
+        {
+        <tr>
+            <td>@d.Players.name  @d.Players.last_name</td>
+            <td>@d.Players.Teams.name</td>
+            <td>@d.points</td>
+            <td>@d.error</td>
+            <td>@d.blocks</td>
+            <td>@d.aces</td>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tournaments.name)
-        </dt>
+    </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tournaments.name)
-        </dd>
+        }
+    </table>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.game_result)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.game_result)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.game_points)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.game_points)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ladder_position)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ladder_position)
-        </dd>
-
-    </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.match_id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.matches.match_id}) |
     @Html.ActionLink("Back to List", "Index")
 </p>

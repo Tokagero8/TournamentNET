@@ -4,15 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Matches</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table style="width:100%"; class="table">
     <tr>
         <th>
-            @Html.DisplayName("Nazwa Turnieju")
+            @Html.DisplayName("Tournaments Name")
         </th>
         <th>
             @Html.DisplayName("Team1")
@@ -27,7 +27,7 @@
             @Html.DisplayName("Game points")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ladder_position)
+            @Html.DisplayName("Ladder Position")
         </th>
         <th></th>
     </tr>

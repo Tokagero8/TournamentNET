@@ -4,14 +4,13 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Tournament ladder</h2> 
 
 <dl class="dl-horizontal">
 
 
     
 <div>
-    <h4>Tournaments</h4>
     <hr/>
     <table style="width: 100%;" border="1">
         <tbody>
@@ -33,7 +32,7 @@
                     }
                     catch (Exception ex)
                     {
-                        <a href="@Url.Action("Create", "Matches", new { @ladder_position = "12" })" class="elements"> 
+                        <a href="@Url.Action("Create", "Matches", new { @ladder_position= 12})" class="elements"> 
                             <span>Create Match</span>
                         </a>
 
