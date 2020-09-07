@@ -16,15 +16,18 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Matches.game_result)
+            @Html.DisplayFor(model => model.Matches.Teams.name) vs
+            @Html.DisplayFor(model => model.Matches.Teams1.name) w
+            @Html.DisplayFor(model => model.Matches.Tournaments.name)
         </dd>
 
         <dt>
-            Name
+            Full Name
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Players.name)
+            @Html.DisplayFor(model => model.Players.last_name)
         </dd>
 
         <dt>
