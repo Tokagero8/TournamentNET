@@ -16,7 +16,7 @@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.tournament_id, "tournament_id", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.tournament_id, "Tournament Name", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("tournament_id", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.tournament_id, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.team1_id, "team1_id", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.team1_id, "Team 1", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("team1_id", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.team1_id, "", new { @class = "text-danger" })
@@ -32,7 +32,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.team2_id, "team2_id", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.team2_id, "Team 2", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("team2_id", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.team2_id, "", new { @class = "text-danger" })
@@ -40,7 +40,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.game_result, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.game_result, "Result", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.game_result, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.game_result, "", new { @class = "text-danger" })
@@ -48,7 +48,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.game_points, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.game_points, "Set Points", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.game_points, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.game_points, "", new { @class = "text-danger" })
@@ -56,7 +56,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.ladder_position, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.ladder_position, "Ladder Position", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.ladder_position, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.ladder_position, "", new { @class = "text-danger" })
