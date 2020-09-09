@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TournamentNET.Models
 {
-    public class TourTeams
+    public class ViewModelTourTeams
     {
         public Tournaments tournaments { get; set; }
         public List<Teams> teams { get; set; }

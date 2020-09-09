@@ -1,4 +1,4 @@
-﻿@model TournamentNET.Models.Teams
+﻿@model TournamentNET.Models.ViewModelTeamPlayers
 
 @{
     ViewBag.Title = "Details";
@@ -15,7 +15,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Tournaments.name)
+            @Html.DisplayFor(model => model.teams.Tournaments.name)
         </dd>
 
         <dt>
@@ -23,7 +23,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.name)
+            @Html.DisplayFor(model => model.teams.name)
         </dd>
 
         <dt>
@@ -31,13 +31,35 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ranking)
+            @Html.DisplayFor(model => model.teams.ranking)
         </dd>
 
     </dl>
 
 </div>
+
+<div>
+
+    <b>Team players</b><br />
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th>Full Name</th>
+            <th></th>
+
+        </tr>
+        @foreach (var p in Model.players)
+        {
+            <tr>
+                <td>@p.name @p.last_name</td>
+            </tr>
+
+        }
+    </table>
+
+
+</div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.team_id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.teams.team_id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -43,15 +43,15 @@ namespace TournamentNET.Controllers
             //ViewBag.player_id = new SelectList(db.Players, "player_id", "name");
             List<Matches> matches = db.Matches.ToList();
             List<Players> players = db.Players.ToList();
-            List<MatchTeams> matchTeamsList = new List<MatchTeams>();
-            List<Name_LastName> name_Lastname = new List<Name_LastName>();
+            List<ViewModelMatchTeams> matchTeamsList = new List<ViewModelMatchTeams>();
+            List<ViewModelPlayer> name_Lastname = new List<ViewModelPlayer>();
             foreach (Matches m in matches)
             {
-                matchTeamsList.Add(new MatchTeams(m.match_id, m.Teams.name + " vs " + m.Teams1.name));
+                matchTeamsList.Add(new ViewModelMatchTeams(m.match_id, m.Teams.name + " vs " + m.Teams1.name));
             }
             foreach (Players p in players)
             {
-                name_Lastname.Add(new Name_LastName(p.player_id, p.name + " " + p.last_name));
+                name_Lastname.Add(new ViewModelPlayer(p.player_id, p.name + " " + p.last_name));
             }
             ViewBag.match_id = new SelectList(matchTeamsList, "match_id", "team1_and_team2");
             ViewBag.player_id = new SelectList(name_Lastname, "player_id", "name_lastname");
@@ -93,15 +93,15 @@ namespace TournamentNET.Controllers
             //ViewBag.player_id = new SelectList(db.Players, "player_id", "name", statistics.player_id);
             List<Matches> matches = db.Matches.ToList();
             List<Players> players = db.Players.ToList();
-            List<MatchTeams> matchTeamsList = new List<MatchTeams>();
-            List<Name_LastName> name_Lastname = new List<Name_LastName>();
+            List<ViewModelMatchTeams> matchTeamsList = new List<ViewModelMatchTeams>();
+            List<ViewModelPlayer> name_Lastname = new List<ViewModelPlayer>();
             foreach (Matches m in matches)
             {
-                matchTeamsList.Add(new MatchTeams(m.match_id, m.Teams.name + " vs " + m.Teams1.name));
+                matchTeamsList.Add(new ViewModelMatchTeams(m.match_id, m.Teams.name + " vs " + m.Teams1.name));
             }
             foreach (Players p in players)
             {
-                name_Lastname.Add(new Name_LastName(p.player_id, p.name + " " + p.last_name));
+                name_Lastname.Add(new ViewModelPlayer(p.player_id, p.name + " " + p.last_name));
             }
             ViewBag.match_id = new SelectList(matchTeamsList, "match_id", "team1_and_team2", statistics.match_id);
             ViewBag.player_id = new SelectList(name_Lastname, "player_id", "name_lastname", statistics.player_id);

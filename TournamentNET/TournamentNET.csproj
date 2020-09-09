@@ -139,15 +139,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Matches.cs" />
-    <Compile Include="Models\MatchTeams.cs" />
+    <Compile Include="Models\ViewModelMatchTeams.cs" />
     <Compile Include="Models\Model1.cs" />
-    <Compile Include="Models\Name_LastName.cs" />
+    <Compile Include="Models\ViewModelPlayer.cs" />
     <Compile Include="Models\Players.cs" />
     <Compile Include="Models\Statistics.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\Teams.cs" />
     <Compile Include="Models\Tournaments.cs" />
-    <Compile Include="Models\TourTeams.cs" />
+    <Compile Include="Models\ViewModelTeamPlayers.cs" />
+    <Compile Include="Models\ViewModelTourTeams.cs" />
     <Compile Include="Models\ViewModelMatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

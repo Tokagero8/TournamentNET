@@ -29,11 +29,16 @@ namespace TournamentNET.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Teams teams = db.Teams.Find(id);
-            if (teams == null)
+            List<Players> players = new List<Players>();
+            players = teams.Players.ToList().FindAll(p => p.team_id == id).OrderBy(p => p.name).ToList();
+            ViewModelTeamPlayers viewModelTeamPlayers = new ViewModelTeamPlayers();
+            viewModelTeamPlayers.teams = teams;
+            viewModelTeamPlayers.players = players;
+            if (viewModelTeamPlayers == null)
             {
                 return HttpNotFound();
             }
-            return View(teams);
+            return View(viewModelTeamPlayers);
         }
 
         // GET: Teams/Create
