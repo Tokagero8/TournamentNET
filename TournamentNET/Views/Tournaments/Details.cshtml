@@ -6,209 +6,250 @@
 
 <h2>Tournament ladder</h2>
 <hr />
-<table style="width: 100%;" border="1">
+<table style="width: 100%;" border="5">
     <tbody>
         <tr style="height:50px;">
 
             <td style="width: 11%;">
             </td>
             <td style="width: 11%;">&nbsp;</td>
-            <td style="width: 11%;">
+            <td style="width: 11%; background-color:#ffffcc;">
                 D. <br>
                 @* Ladder pozycja 12. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 12).match_id })">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 12).match_id })">
+                
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 12).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 12).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 12).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
                 {
-                    @* Tutaj prówbowałem przekaazać  parametr ladder_position po kliknieciu w link, ale nie działa  *@
-                    <a href="@Url.Action("Create", "Matches", new { @ladder_position = 12})" class="elements">
-                        <span>Create Match</span>
-                    </a>
-
+                <a href="@Url.Action("Create", "Matches", new { @ladder_position = 12})" class="elements">
+                    <p style="text-align: center">Create Match</p>
+                </a>
                 }
             </td>
-            <td style="width: 11%;">
-                8.
+            <td style="width: 11%; background-color: #FFFF00;">
                 @* Druzyny nr.8-9 z rankingu. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[7].team_id})">@Html.DisplayFor(model => model.teams[7].name)</a><hr />
-                    @Html.DisplayName("9")
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[8].team_id})">@Html.DisplayFor(model => model.teams[8].name)</a>
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[7].team_id})"><p style="text-align: center">8. @Html.DisplayFor(model => model.teams[7].name)</p></a>
+                }
+                catch (Exception)
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
+
+                <hr/>
+                @try
+                {<a href="@Url.Action("Details", "Teams", new { Id=Model.teams[8].team_id})"><p style="text-align: center">9. @Html.DisplayFor(model => model.teams[8].name)</p></a>
 
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
             </td>
-            <td style="width: 11%;">
+            <td style="width: 11%; background-color:#ffffcc;">
                 @* Ladder pozycja 1. *@
                 @try
                 {
                     <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 1).match_id})">
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 1).Teams.name)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 1).game_result)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 1).Teams1.name)
+                            <p style="text-align: center">
+                                @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 1).Teams.name)
+                                @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 1).game_result)
+                                @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 1).Teams1.name)
+                                </p>
                     </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 1})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
-            <td style="width: 12%;">
-                1.
+            <td style="width: 12%; background-color: #FFFF00;">
                 @* Druzyna nr.1 z rankingu. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[0].team_id})">@Html.DisplayFor(model => model.teams[0].name)</a><hr />
-                    @Html.DisplayName(" win 8/9 ")
-                }
+                <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[0].team_id})"><p style="text-align: center">1. @Html.DisplayFor(model => model.teams[0].name)</p></a><hr>
+                    @Html.DisplayName(" Win 8/9 ")
+             }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
             </td>
 
-            <td style="width: 11%;">
+            <td style="width: 11%; background-color:#ffffcc;">
                 A.<br>
                 @* Ladder pozycja 5. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 5).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 5).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 5).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 5).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 5).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 5})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
             <td style="width: 11%;">&nbsp;</td>
             <td style="width: 11%;">&nbsp;</td>
         </tr>
         <tr style="height:50px;">
             <td>&nbsp;</td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 E. <br>
                 @* Ladder pozycja 16. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 16).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 16).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 16).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 16).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 16).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 16})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 E. <br>
                 @* Ladder pozycja 9. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 9).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 9).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 9).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 9).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 9).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 9})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                     </a>}
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr style="height:50px;">
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 C. <br>
                 @* Ladder pozycja 13. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 13).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 13).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 13).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 13).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 13).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 13})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
-            <td>
-                5.
+            <td style="background-color: #FFFF00;">
                 @* Druzyny nr.5-12 z rankingu. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[4].team_id})">@Html.DisplayFor(model => model.teams[4].name)</a><hr />
-                    @Html.DisplayName("12")
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[11].team_id})">@Html.DisplayFor(model => model.teams[11].name)</a>
-
+                <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[4].team_id})"><p style="text-align: center">
+                            5. @Html.DisplayFor(model => model.teams[4].name)
+                </p></a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
+                <hr/>
+                @try
+                {
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[11].team_id})">12. @Html.DisplayFor(model => model.teams[11].name)</a>
+                }
+                catch (Exception)
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
             </td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 @* Ladder pozycja 2. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 2).match_id})">
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 2).Teams.name)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 2).game_result)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 2).Teams1.name)
-                    </a>
+                <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 2).match_id})">
+                        <p style="text-align: center">
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 2).Teams.name)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 2).game_result)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 2).Teams1.name)
+                            </p>
+                </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 2})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
-            <td>
-                4.
+            <td style="background-color: #FFFF00;">
                 @* Druzyna nr.4 z rankingu. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[3].team_id})">@Html.DisplayFor(model => model.teams[3].name)</a><hr />
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[3].team_id})"><p style="text-align: center">4. 
+                        @Html.DisplayFor(model => model.teams[3].name)</p></a><hr />
                     @Html.DisplayName(" win 5/12 ")
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
             </td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 B. <br>
                 @* Ladder pozycja 6. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 6).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 6).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 6).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 6).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 6).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 6})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr style="height:50px;">
-            <td>
+            <td style="background-color:#ffffcc;">
                 @* Ladder pozycja 18. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 18).match_id})">
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 18).Teams.name)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 18).game_result)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 18).Teams1.name)
-                    </a>
+                <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 18).match_id})">
+                        <p style="text-align: center">
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 18).Teams.name)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 18).game_result)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 18).Teams1.name)
+                            </p>
+                </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 18})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -217,195 +258,240 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 @* Ladder pozycja 11. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 11).match_id})">
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 11).Teams.name)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 11).game_result)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 11).Teams1.name)
-                    </a>
+                <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 11).match_id})">
+                        <p style="text-align: center">
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 11).Teams.name)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 11).game_result)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 11).Teams1.name)
+                            </p>
+                </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 11})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
         </tr>
         <tr style="height:50px;">
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 B. <br>
                 @* Ladder pozycja 14. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 14).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 14).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 14).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 14).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 14).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 14})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
-            <td>
-                6.
+            <td style="background-color: #FFFF00;">
                 @* Druzyny nr.6-11 z rankingu. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[5].team_id})">@Html.DisplayFor(model => model.teams[5].name)</a><hr />
-                    @Html.DisplayName("1")
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[10].team_id})">@Html.DisplayFor(model => model.teams[10].name)</a>
-
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[5].team_id})"><p style="text-align: center">6. 
+                        @Html.DisplayFor(model => model.teams[5].name)</p></a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
+                <hr/>
+                @try
+                {
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[10].team_id})">11. @Html.DisplayFor(model => model.teams[10].name)</a>
+                }
+                catch (Exception)
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
             </td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 @* Ladder pozycja 3. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 3).match_id})">
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 3).Teams.name)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 3).game_result)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 3).Teams1.name)
-                    </a>
+                <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 3).match_id})">
+                        <p style="text-align: center">
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 3).Teams.name)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 3).game_result)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 3).Teams1.name)
+                            </p>
+                </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 3})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
-            <td>
-                3.
+            <td style="background-color: #FFFF00;">
                 @* Druzyna nr.3 z rankingu. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[2].team_id})">@Html.DisplayFor(model => model.teams[2].name)</a><hr />
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[2].team_id})"><p style="text-align: center">3. 
+                        @Html.DisplayFor(model => model.teams[2].name)</p></a><hr />
                     @Html.DisplayName(" win 6/11 ")
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
             </td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 C. <br>
                 @* Ladder pozycja 7. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 7).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 7).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 7).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 7).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 7).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 7})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr style="height:50px;">
             <td>&nbsp;</td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 F. <br>
                 @* Ladder pozycja 17. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 17).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 17).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 17).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 17).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 17).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 17})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td></td>
             <td>&nbsp;</td>
             <td></td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 F. <br>
                 @* Ladder pozycja 10. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 10).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 10).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 10).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 10).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 10).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 10})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr style="height:50px;">
             <td>&nbsp;</td>
             <td></td>
-            <td>
+            <td style="background-color: #ffffcc;">
                 A. <br>
                 @* Ladder pozycja 15. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 15).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 15).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 15).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 15).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 15).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 15})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
-            <td>
-                7.
+            <td style="background-color: #FFFF00;">
                 @* Druzyny nr.7-10 z rankingu. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[6].team_id})">@Html.DisplayFor(model => model.teams[6].name)</a><hr />
-                    @Html.DisplayName("10")
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[9].team_id})">@Html.DisplayFor(model => model.teams[9].name)</a>
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[6].team_id})"><p style="text-align: center">7. 
+                        @Html.DisplayFor(model => model.teams[6].name)</p></a>
+                }
+                catch (Exception)
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
+                <hr/>
+                @try
+                {
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[9].team_id})">10. @Html.DisplayFor(model => model.teams[9].name)</a>
 
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
             </td>
-            <td>
+            <td style="background-color: #ffffcc;">
                 @* Ladder pozycja 4. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 4).match_id})">
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 4).Teams.name)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 4).game_result)
-                        @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 4).Teams1.name)
-                    </a>
+                <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 4).match_id})">
+                        <p style="text-align: center">
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 4).Teams.name)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 4).game_result)
+                            @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 4).Teams1.name)
+                            </p>
+                </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("-")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 4})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
-            <td>
-                2.
+            <td style="background-color: #FFFF00;">
                 @* Druzyna nr.2 z rankingu. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[1].team_id})">@Html.DisplayFor(model => model.teams[1].name)</a><hr />
+                    <a href="@Url.Action("Details", "Teams", new { Id=Model.teams[1].team_id})"><p style="text-align: center">2. 
+                        @Html.DisplayFor(model => model.teams[1].name)</p></a><hr />
                     @Html.DisplayName(" win 7/10 ")
                 }
                 catch (Exception)
-                {@Html.DisplayName("Brak meczy")}
+                {<a href="@Url.Action("")"><p style="text-align: center">Brak drużyny</p></a>}
             </td>
-            <td>
+            <td style="background-color:#ffffcc;">
                 D. <br>
                 @* Ladder pozycja 8. *@
                 @try
                 {
-                    <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 8).match_id})">
+            <a href="@Url.Action("Details", "Matches", new { Id = Model.matches.First(x => x.ladder_position == 8).match_id})">
+                    <p style="text-align: center">
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 8).Teams.name)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 8).game_result)
                         @Html.DisplayFor(m => m.matches.First(x => x.ladder_position == 8).Teams1.name)
-                    </a>
+                        </p>
+            </a>
                 }
                 catch (Exception)
-                {@Html.DisplayName("wyświetl")}
+                { <a href="@Url.Action("Create", "Matches", new { @ladder_position = 8})" class="elements">
+                        <p style="text-align: center">Create Match</p>
+                    </a>}
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -419,9 +505,9 @@
             <td>&nbsp;</td>
             <td>Team ranking 1-4</td>
             <td>
-                quarterfinal
+                Quarterfinal
             </td>
-            <td>semifinal</td>
+            <td>Semifinal</td>
             <td>Final: 1-2</td>
         </tr>
 
@@ -434,5 +520,4 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.tournaments.tournament_id }) |
     @Html.ActionLink("Back to List", "Index") |
-    @Html.ActionLink("Create Match", "Create", "Matches")
 </p>
