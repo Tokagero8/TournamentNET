@@ -39,8 +39,6 @@ namespace TournamentNET.Controllers
         // GET: Statistics/Create
         public ActionResult Create()
         {
-            //ViewBag.teamsy = new SelectList(db.Matches, "match_id", "Teams");
-            //ViewBag.player_id = new SelectList(db.Players, "player_id", "name");
             List<Matches> matches = db.Matches.ToList();
             List<Players> players = db.Players.ToList();
             List<ViewModelMatchTeams> matchTeamsList = new List<ViewModelMatchTeams>();
@@ -59,8 +57,6 @@ namespace TournamentNET.Controllers
         }
 
         // POST: Statistics/Create
-        // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
-        // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "statistics_id,match_id,player_id,points,error,blocks,aces")] Statistics statistics)
@@ -89,8 +85,6 @@ namespace TournamentNET.Controllers
             {
                 return HttpNotFound();
             }
-            //ViewBag.match_id = new SelectList(db.Matches, "match_id", "game_result", statistics.match_id);
-            //ViewBag.player_id = new SelectList(db.Players, "player_id", "name", statistics.player_id);
             List<Matches> matches = db.Matches.ToList();
             List<Players> players = db.Players.ToList();
             List<ViewModelMatchTeams> matchTeamsList = new List<ViewModelMatchTeams>();
@@ -109,8 +103,6 @@ namespace TournamentNET.Controllers
         }
 
         // POST: Statistics/Edit/5
-        // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
-        // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "statistics_id,match_id,player_id,points,error,blocks,aces")] Statistics statistics)

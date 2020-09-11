@@ -53,8 +53,6 @@ namespace TournamentNET.Controllers
         }
 
         // POST: Matches/Create
-        // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
-        // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "match_id,tournament_id,team1_id,team2_id,game_result,game_points,ladder_position")] Matches matches)
@@ -91,8 +89,6 @@ namespace TournamentNET.Controllers
         }
 
         // POST: Matches/Edit/5
-        // Aby zapewnić ochronę przed atakami polegającymi na przesyłaniu dodatkowych danych, włącz określone właściwości, z którymi chcesz utworzyć powiązania.
-        // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "match_id,tournament_id,team1_id,team2_id,game_result,game_points,ladder_position")] Matches matches)
